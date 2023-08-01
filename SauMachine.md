@@ -27,6 +27,7 @@ Welcome to my first write up for Hackthebox machines!
 
 i thought it would be a good way to help me understand the topics little bit deeper, as i am trying to explain them to others, as well as maybe help others, and share my thought process, breaking into the machine.
 
+https://miro.medium.com/v2/resize:fit:550/format:webp/1*OSckDAMfASUW56DpVUAr8w.png
 Sau Machine ( Easy )
 
 Sau machine is your typical Easy linux machine, pretty straight forward in most parts, only one trick in obtaining user flag, and the privilege escalation is a straightforward one ( i spent 40 minutes on it, i might be a little bit stupid ngl ).
