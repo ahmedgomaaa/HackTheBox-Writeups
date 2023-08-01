@@ -16,11 +16,6 @@ HackTheBox write up: “Sau” Machine
 
 5 min read·2 days ago
 
-\--
-
-Listen
-
-Share
 
 Welcome to my first write up for Hackthebox machines!
 
