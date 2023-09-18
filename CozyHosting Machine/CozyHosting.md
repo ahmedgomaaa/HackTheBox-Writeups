@@ -19,6 +19,9 @@ Listen
 
 Share
 
+![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/879cc2ee-bedc-448e-8f5a-1fdc65ee1e8c)
+
+
 Welcome To HACKTHEBOX:CozyHosting machine writeup. It is an easy machine with a focus on web application vulnerabilities and privilage escalation vulnerabilities.
 
 we first start by running a basic nmap scan against the machine ip
