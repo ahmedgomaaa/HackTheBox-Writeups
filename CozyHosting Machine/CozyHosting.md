@@ -115,10 +115,10 @@ psql -h 127.0.0.1 -U postgres
 \\c cozyhosting
 ``````
 \\d #to list availabe databases
-``````
+```
 ![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/c7d07dc7-f747-413d-b30a-b5511df006b4)
 
-``````
+```
 
 select \* from users; #To select all data in the users database
 
