@@ -107,9 +107,8 @@ we can start inspecting this file using tool like jd-gui
 ![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/906a8cca-c720-4475-808b-837b5534946f)
 
 
-after inspecting we can find that it contains postgres database credentials like the username and the password, so we try to login in to the postgres database using the commnads:
+after inspecting we can find that it contains postgres database credentials like the username and the password, so we try to login in to the postgres database using the commnads
 
-```
 psql -h 127.0.0.1 -U postgres
 
 \\c cozyhosting
