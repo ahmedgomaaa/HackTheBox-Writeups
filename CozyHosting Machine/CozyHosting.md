@@ -164,6 +164,7 @@ sudo ssh -o ProxyCommand=';sh 0<&2 1>&2' x
 
 we get our root access successfully.
 
-![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/5ba8b86b-ecc1-491b-b34a-447710706520)
+![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/f68ef66e-4fff-438f-ad98-8a7c34087c83)
+
 
 and thats how we get our root flag.
