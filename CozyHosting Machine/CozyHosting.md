@@ -137,6 +137,7 @@ ssh josh@10.10.11.230
 ```
 
 And we succesfully log in with the user josh, and we can access his directory, and access the user flag.txt
+
 ![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/7086d8bb-afe1-44c8-88a7-edaffc56b70f)
 
 
@@ -152,6 +153,7 @@ we start by checking the allowed commands for our user to run as root without th
 we see that we can run (root) /usr/bin/ssh \* as root without having to have the root password, lets check the GTFObins if we can abuse this to escalate our privileges to root.
 
 we find:
+
 ![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/35470ea6-3de5-4d88-a001-c83bcd1a66df)
 
 and by running
@@ -161,6 +163,7 @@ sudo ssh -o ProxyCommand=';sh 0<&2 1>&2' x
 ```
 
 we get our root access successfully.
+
 ![image](https://github.com/ahmedgomaaa/HackTheBox-Writeups/assets/37199252/5ba8b86b-ecc1-491b-b34a-447710706520)
 
 and thats how we get our root flag.
